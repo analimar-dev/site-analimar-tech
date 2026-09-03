@@ -1,64 +1,119 @@
-/* =========================
-   CABEÇALHO
-========================= */
+/* =========================================================
+   CABEÇALHO — ANALIMAR | DESENVOLVIMENTO WEB
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+.header,
+.header * {
+    box-sizing: border-box;
+}
 
 .header {
     width: 100%;
+    min-height: 92px;
     background-color: #f7f9fb;
     border-bottom: 1px solid #e1e6ea;
+    font-family: "Poppins", Arial, sans-serif;
 }
 
+
+/* =========================================================
+   NAVEGAÇÃO
+   ========================================================= */
+
 .nav {
-    width: calc(100% - 48px);
-    max-width: 1320px;
-    height: 88px;
-    margin: 0 auto;
+    width: 100%;
+    min-height: 92px;
+
+    padding: 0 40px;
 
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
+
+    margin: 0;
 }
 
-/* LOGO */
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    text-decoration: none;
+}
 
 .logo img {
-    width: 210px;
+    width: 245px;
     height: auto;
     display: block;
 }
 
-/* MENU */
+
+/* =========================================================
+   MENU PRINCIPAL
+   ========================================================= */
 
 .nav-menu {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 58px;
+
+    gap: 48px;
 
     margin: 0;
     padding: 0;
+
     list-style: none;
+}
+
+.nav-menu li {
+    margin: 0;
+    padding: 0;
 }
 
 .nav-link {
     position: relative;
 
+    display: inline-flex;
+    align-items: center;
+
+    padding: 8px 0;
+
     color: #173b56;
-    font-size: 22px;
-    font-weight: 500;
+
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.4;
 
     text-decoration: none;
     white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-/* HOVER DOS LINKS */
+
+/* LINHA ANIMADA */
 
 .nav-link::after {
     content: "";
 
     position: absolute;
     left: 0;
-    bottom: -7px;
+    bottom: 0;
 
     width: 100%;
     height: 2px;
@@ -71,59 +126,132 @@
     transition: transform 0.25s ease;
 }
 
+.nav-link:hover {
+    color: #185b7d;
+}
+
 .nav-link:hover::after {
     transform: scaleX(1);
 }
 
-/* BOTÃO */
+
+/* =========================================================
+   BOTÃO FALE COMIGO
+   ========================================================= */
 
 .nav-cta {
-    width: 152px;
-    height: 52px;
+    width: 164px;
+    min-height: 52px;
 
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    margin-left: 58px;
+    margin: 0;
+
+    padding: 0 22px;
 
     background-color: #185b7d;
     color: #ffffff;
 
-    border-radius: 8px;
+    border: 1px solid #185b7d;
+    border-radius: 24px;
 
-    font-size: 19px;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 17px;
     font-weight: 700;
+    line-height: 1;
 
     text-decoration: none;
+    white-space: nowrap;
+
+    box-shadow: 0 4px 12px rgba(23, 59, 86, 0.10);
 
     transition:
         background-color 0.25s ease,
+        border-color 0.25s ease,
         transform 0.25s ease,
         box-shadow 0.25s ease;
 }
 
 .nav-cta:hover {
     background-color: #173b56;
+    border-color: #37546b;
 
-    transform: translateY(-3px) scale(1.04);
+    transform: translateY(-2px);
 
-    box-shadow: 0 8px 18px rgba(23, 59, 86, 0.25);
+    box-shadow: 0 8px 20px rgba(23, 59, 86, 0.20);
 }
 
 
-/* =========================
+/* =========================================================
+   FOCO — ACESSIBILIDADE
+   ========================================================= */
+
+.nav-link:focus-visible,
+.nav-cta:focus-visible,
+.menu-toggle:focus-visible {
+    outline: 3px solid rgba(24, 91, 125, 0.30);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   HAMBÚRGUER
+   FICA ESCONDIDO NO DESKTOP
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 46px;
+    height: 46px;
+
+    margin: 0;
+    padding: 0;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 5px;
+
+    background: transparent;
+    border: 0;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+
+    display: block;
+
+    background-color: #173b56;
+
+    border-radius: 2px;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease,
+        background-color 0.25s ease;
+}
+
+
+/* =========================================================
    TABLET
-========================= */
+   ========================================================= */
 
 @media (max-width: 1100px) {
 
     .nav {
-        width: calc(100% - 40px);
+        min-height: 88px;
+        padding: 0 30px;
     }
 
     .logo img {
-        width: 175px;
+        width: 215px;
     }
 
     .nav-menu {
@@ -131,33 +259,35 @@
     }
 
     .nav-link {
-        font-size: 20px;
+        font-size: 17px;
     }
 
     .nav-cta {
-        width: 135px;
-        height: 48px;
+        width: 150px;
+        min-height: 50px;
 
-        margin-left: 32px;
-
-        font-size: 17px;
+        font-size: 16px;
     }
 }
 
 
-/* =========================
+/* =========================================================
    TABLET MENOR
-========================= */
+   ========================================================= */
 
 @media (max-width: 900px) {
 
+    .header {
+        min-height: 82px;
+    }
+
     .nav {
-        width: calc(100% - 32px);
-        height: 82px;
+        min-height: 82px;
+        padding: 0 24px;
     }
 
     .logo img {
-        width: 155px;
+        width: 190px;
     }
 
     .nav-menu {
@@ -165,106 +295,168 @@
     }
 
     .nav-link {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .nav-cta {
-        width: 120px;
-        height: 46px;
+        width: 135px;
+        min-height: 46px;
 
-        margin-left: 22px;
+        padding: 0 16px;
 
-        font-size: 16px;
+        font-size: 15px;
     }
 }
 
 
-/* =========================
+/* =========================================================
    CELULAR
-========================= */
+   ========================================================= */
 
 @media (max-width: 700px) {
 
+    .header {
+        min-height: 76px;
+    }
+
     .nav {
-        width: calc(100% - 24px);
-        height: 76px;
+        min-height: 76px;
+
+        padding: 0 16px;
 
         display: flex;
         align-items: center;
     }
 
-    .logo img {
-        width: 140px;
+    .logo {
+        flex-shrink: 0;
     }
 
+    .logo img {
+        width: 165px;
+    }
+
+    /* Esconde menu desktop */
     .nav-menu {
         display: none;
     }
 
+    /* Botão continua visível */
     .nav-cta {
-        width: 120px;
-        height: 44px;
+        width: 126px;
+        min-height: 44px;
 
         margin-left: auto;
 
-        font-size: 16px;
+        padding: 0 14px;
+
+        font-size: 15px;
     }
 
+    /* Mostra hambúrguer */
     .menu-toggle {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
 
-        width: 42px;
-        height: 42px;
+        flex-shrink: 0;
 
         margin-left: 10px;
-
-        padding: 0;
-
-        border: none;
-        background: transparent;
-
-        cursor: pointer;
     }
 
-    .menu-toggle span {
-        width: 24px;
-        height: 2px;
-
-        background-color: #173b56;
-
-        transition: 0.25s ease;
+    /* Menu aberto */
+    .nav-menu[aria-hidden="false"] {
+        display: flex;
     }
 }
 
 
-/* =========================
+/* =========================================================
    CELULAR PEQUENO
-========================= */
+   ========================================================= */
 
 @media (max-width: 420px) {
 
+    .header {
+        min-height: 72px;
+    }
+
     .nav {
-        width: calc(100% - 20px);
-        height: 72px;
+        min-height: 72px;
+        padding: 0 10px;
     }
 
     .logo img {
-        width: 125px;
+        width: 145px;
     }
 
     .nav-cta {
-        width: 108px;
+        width: 112px;
+        min-height: 42px;
+
+        padding: 0 10px;
+
+        font-size: 14px;
+    }
+
+    .menu-toggle {
+        width: 42px;
         height: 42px;
 
-        font-size: 15px;
+        margin-left: 7px;
+    }
+
+    .menu-toggle span {
+        width: 23px;
+    }
+}
+
+
+/* =========================================================
+   CELULAR MUITO PEQUENO
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .nav {
+        padding: 0 8px;
+    }
+
+    .logo img {
+        width: 132px;
+    }
+
+    .nav-cta {
+        width: 104px;
+        min-height: 40px;
+
+        font-size: 13px;
     }
 
     .menu-toggle {
         width: 40px;
         height: 40px;
+
+        margin-left: 5px;
     }
+
+    .menu-toggle span {
+        width: 22px;
+    }
+}
+
+
+/* =========================================================
+   HAMBÚRGUER → X
+   QUANDO aria-expanded="true"
+   ========================================================= */
+
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
