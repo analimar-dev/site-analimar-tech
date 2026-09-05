@@ -363,9 +363,54 @@
     }
 
     /* Menu aberto */
-    .nav-menu[aria-hidden="false"] {
-        display: flex;
-    }
+  /* =========================================================
+   MENU MOBILE ABERTO
+   ========================================================= */
+
+.nav {
+    position: relative;
+}
+
+.nav-menu.menu-aberto {
+    display: flex;
+
+    position: absolute;
+    top: 100%;
+    right: 10px;
+
+    width: 250px;
+
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    gap: 0;
+
+    margin: 0;
+    padding: 12px 20px;
+
+    background-color: #f7f9fb;
+
+    border: 1px solid #e1e6ea;
+    border-radius: 0 0 12px 12px;
+
+    box-shadow: 0 8px 20px rgba(23, 59, 86, 0.12);
+
+    z-index: 1000;
+}
+
+.nav-menu.menu-aberto .nav-item {
+    width: 100%;
+}
+
+.nav-menu.menu-aberto .nav-link {
+    display: flex;
+    width: 100%;
+
+    padding: 12px 0;
+} 
+
+
 }
 
 
