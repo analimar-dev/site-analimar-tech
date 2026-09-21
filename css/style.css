@@ -247,26 +247,28 @@
 
     .nav {
         min-height: 88px;
-        padding: 0 30px;
+        padding: 0 20px;
     }
 
     .logo img {
-        width: 215px;
+        width: 180px;
     }
 
     .nav-menu {
-        gap: 32px;
+        gap: 18px;
     }
 
     .nav-link {
-        font-size: 17px;
+        font-size: 15px;
     }
 
     .nav-cta {
-        width: 150px;
-        min-height: 50px;
+        width: 130px;
+        min-height: 48px;
 
-        font-size: 16px;
+        padding: 0 14px;
+
+        font-size: 15px;
     }
 }
 
