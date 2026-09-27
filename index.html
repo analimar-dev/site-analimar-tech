@@ -34,15 +34,19 @@
             rel="stylesheet"
             href="css/style.css">
 
-    </head>
+        <!-- JavaScript do menu -->
+        <script
+            src="js/menu.js"
+            defer>
+        </script>
 
-    <script src="js/menu.js" defer></script>
+    </head>
 
     <body>
 
         <!-- ==================================================
-         CABEÇALHO
-    =================================================== -->
+             CABEÇALHO
+        =================================================== -->
 
         <header class="header">
 
@@ -51,8 +55,8 @@
                 aria-label="Navegação principal">
 
                 <!-- ==================================================
-                 LOGO
-            =================================================== -->
+                     LOGO
+                =================================================== -->
 
                 <a
                     class="logo"
@@ -66,8 +70,8 @@
                 </a>
 
                 <!-- ==================================================
-                 MENU PRINCIPAL
-            =================================================== -->
+                     MENU PRINCIPAL
+                =================================================== -->
 
                 <ul
                     class="nav-menu"
@@ -126,8 +130,8 @@
                 </ul>
 
                 <!-- ==================================================
-                 CTA PRINCIPAL
-            =================================================== -->
+                     CTA PRINCIPAL
+                =================================================== -->
 
                 <a
                     class="nav-cta"
@@ -138,8 +142,8 @@
                 </a>
 
                 <!-- ==================================================
-                 BOTÃO DO MENU MOBILE
-            =================================================== -->
+                     BOTÃO DO MENU MOBILE
+                =================================================== -->
 
                 <button
                     class="menu-toggle"
@@ -150,9 +154,7 @@
                     aria-controls="menu-principal">
 
                     <span></span>
-
                     <span></span>
-
                     <span></span>
 
                 </button>
@@ -162,54 +164,166 @@
         </header>
 
         <!-- ==================================================
-     BANNER PRINCIPAL — HERO
-================================================== -->
+             BANNER PRINCIPAL
+        =================================================== -->
 
         <main>
 
-            <section class="hero" aria-labelledby="hero-titulo">
+            <section
+                class="hero"
+                aria-labelledby="hero-title">
 
                 <div class="hero-container">
 
-                    <!-- CONTEÚDO DO BANNER -->
+                    <!-- ==================================================
+                         TEXTO PRINCIPAL
+                    =================================================== -->
 
                     <div class="hero-content">
 
                         <p class="hero-eyebrow">
-                            PRESENÇA DIGITAL PARA O SEU NEGÓCIO
+                            VOCÊ NÃO PRECISA APENAS DE UM SITE.
                         </p>
 
-                        <h1 class="hero-title" id="hero-titulo">
-                            Seu negócio precisa ser
-                            <span>encontrado</span>
-                            por quem procura o que você oferece.
+                        <h1
+                            class="hero-title"
+                            id="hero-title">
+
+                            Precisa de uma porta aberta
+                            <span>24 horas por dia</span>
+                            <span>para novos clientes.</span>
+
                         </h1>
 
-                        <p class="hero-subtitle">
-                            Sites profissionais para transformar presença online
-                            em oportunidades.
-                        </p>
+                        <!-- ==================================================
+                             BENEFÍCIO 1
+                        =================================================== -->
+
+                        <a
+                            class="hero-benefit"
+                            href="https://wa.me/5534988380038?text=Estou%20vindo%20do%20seu%20site%20e%20quero%20ser%20encontrado%20na%20internet."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Falar sobre como ser encontrado na internet">
+
+                            <span
+                                class="hero-benefit-icon"
+                                aria-hidden="true">
+                                ⌕
+                            </span>
+
+                            <h2 class="hero-benefit-title">
+                                Ser encontrado
+                            </h2>
+
+                        </a>
+
+                        <!-- ==================================================
+                             BENEFÍCIO 2
+                        =================================================== -->
+
+                        <a
+                            class="hero-benefit"
+                            href="https://wa.me/5534988380038?text=Estou%20vindo%20do%20seu%20site%20e%20quero%20mostrar%20melhor%20o%20valor%20do%20meu%20trabalho."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Falar sobre como mostrar o valor do seu trabalho">
+
+                            <span
+                                class="hero-benefit-icon"
+                                aria-hidden="true">
+                                ✦
+                            </span>
+
+                            <h2 class="hero-benefit-title">
+                                Mostrar seu valor
+                            </h2>
+
+                        </a>
+
+                        <!-- ==================================================
+                             BENEFÍCIO 3
+                        =================================================== -->
+
+                        <a
+                            class="hero-benefit"
+                            href="https://wa.me/5534988380038?text=Estou%20vindo%20do%20seu%20site%20e%20quero%20gerar%20mais%20contatos."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Falar sobre como gerar mais contatos">
+
+                            <span
+                                class="hero-benefit-icon"
+                                aria-hidden="true">
+                                ✉
+                            </span>
+
+                            <h2 class="hero-benefit-title">
+                                Gerar contatos
+                            </h2>
+
+                        </a>
+
+                        <!-- ==================================================
+                             BENEFÍCIO 4
+                        =================================================== -->
+
+                        <a
+                            class="hero-benefit"
+                            href="https://wa.me/5534988380038?text=Estou%20vindo%20do%20seu%20site%20e%20quero%20conquistar%20novos%20clientes."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Falar sobre como conquistar novos clientes">
+
+                            <span
+                                class="hero-benefit-icon"
+                                aria-hidden="true">
+                                ↗
+                            </span>
+
+                            <h2 class="hero-benefit-title">
+                                Conquistar novos clientes
+                            </h2>
+
+                        </a>
+
+                        <!-- ==================================================
+                             CTA
+                        =================================================== -->
 
                         <a
                             class="hero-button"
-                            href="https://wa.me/5534988380038?text=Ol%C3%A1%2C%20Analimar!%20Vim%20pelo%20seu%20site%20e%20me%20interessei%20pelo%20seu%20trabalho."
+                            href="https://wa.me/5534988380038?text=Estou%20vindo%20do%20seu%20site%2C%20gostei%20do%20seu%20trabalho%2C%20quero%20conhecer."
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Falar com Analimar pelo WhatsApp">
-                            Quero ser encontrado
+
+                            Vamos conversar sobre seu projeto
+
                         </a>
 
                     </div>
 
-                    <!-- IMAGEM DO BANNER -->
+                    <!-- ==================================================
+                         IMAGEM DO BANNER
+                    =================================================== -->
 
                     <div class="hero-visual">
 
-                        <img
-                            src="images/foto-baner.png"
-                            alt="Representação de um site profissional conectado a ferramentas digitais"
-                            width="700"
-                            height="470">
+                        <a
+                            href="https://wa.me/5534988380038?text=Estou%20vindo%20do%20seu%20site%20e%20quero%20conhecer%20seu%20trabalho."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Falar com Analimar pelo WhatsApp">
+
+                            <img
+                                src="images/foto-baner.png"
+                                alt="Representação de um site profissional e de ferramentas digitais"
+                                width="700"
+                                height="470">
+
+                        </a>
+
                     </div>
 
                 </div>
@@ -217,3 +331,7 @@
             </section>
 
         </main>
+
+    </body>
+
+</html>
