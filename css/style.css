@@ -519,14 +519,13 @@
     display: flex;
     align-items: center;
 
-    background:
-        linear-gradient(
-            120deg,
-            #06162f 0%,
-            #0a2c52 32%,
-            #0d5578 68%,
-            #2f8cba 100%
-        );
+  background:
+    linear-gradient(
+        120deg,
+        #020b1a 0%,
+        #06162f 55%,
+        #0a2c52 100%
+    );  
 
     font-family: "Poppins", Arial, sans-serif;
 
