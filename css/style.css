@@ -1215,3 +1215,81 @@ margin-right: auto;
             none;
     }
 }
+
+/* =========================================================
+   ANIMAÇÃO DE ENTRADA — BANNER
+   ========================================================= */
+
+.hero-eyebrow,
+.hero-title,
+.hero-benefit,
+.hero-button,
+.hero-visual {
+    opacity: 0;
+}
+
+.hero-loaded .hero-eyebrow {
+    animation: heroFadeUp 0.7s ease forwards;
+}
+
+.hero-loaded .hero-title {
+    animation: heroFadeUp 0.7s ease 0.12s forwards;
+}
+
+.hero-loaded .hero-benefit:nth-of-type(1) {
+    animation: heroFadeUp 0.6s ease 0.24s forwards;
+}
+
+.hero-loaded .hero-benefit:nth-of-type(2) {
+    animation: heroFadeUp 0.6s ease 0.36s forwards;
+}
+
+.hero-loaded .hero-benefit:nth-of-type(3) {
+    animation: heroFadeUp 0.6s ease 0.48s forwards;
+}
+
+.hero-loaded .hero-benefit:nth-of-type(4) {
+    animation: heroFadeUp 0.6s ease 0.60s forwards;
+}
+
+.hero-loaded .hero-button {
+    animation: heroFadeUp 0.7s ease 0.74s forwards;
+}
+
+.hero-loaded .hero-visual {
+    animation: heroFadeRight 0.9s ease 0.20s forwards;
+}
+
+
+/* =========================================================
+   MOVIMENTOS
+   ========================================================= */
+
+@keyframes heroFadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes heroFadeRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*

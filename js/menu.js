@@ -33,3 +33,15 @@ linksMenu.forEach((link) => {
         menuPrincipal.classList.remove("menu-aberto");
     });
 });
+
+/* =========================================================
+   ANIMAÇÃO DE ENTRADA — BANNER
+   ========================================================= */
+
+const hero = document.querySelector(".hero");
+
+if (hero) {
+    requestAnimationFrame(() => {
+        hero.classList.add("hero-loaded");
+    });
+}
