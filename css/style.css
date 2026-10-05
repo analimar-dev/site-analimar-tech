@@ -1195,26 +1195,50 @@ margin-right: auto;
 
 
 /* =========================================================
-   REDUÇÃO DE MOVIMENTO
+  /* =========================================================
+   ACESSIBILIDADE — REDUÇÃO DE MOVIMENTO
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
+    .hero-eyebrow,
+    .hero-title,
+    .hero-benefit,
+    .hero-button,
+    .hero-visual,
+    .services-eyebrow,
+    .services-title,
+    .services-description,
+    .service-card {
+        opacity: 1;
+        transform: none;
+        animation: none !important;
+    }
+
+
     .hero-benefit,
     .hero-benefit-icon,
-    .hero-button {
-        transition:
-            none;
+    .hero-button,
+    .service-card,
+    .service-button,
+    .services-footer-button {
+        transition: none;
     }
 
 
     .hero-benefit:hover,
     .hero-benefit:hover .hero-benefit-icon,
-    .hero-button:hover {
-        transform:
-            none;
+    .hero-button:hover,
+    .service-card:hover,
+    .service-button:hover,
+    .services-footer-button:hover {
+        transform: none;
     }
-}
+
+} REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+
 
 /* =========================================================
    ANIMAÇÃO DE ENTRADA — BANNER
