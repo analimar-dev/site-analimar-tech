@@ -45,3 +45,34 @@ if (hero) {
         hero.classList.add("hero-loaded");
     });
 }
+
+/* =========================================================
+   ANIMAÇÃO DE ENTRADA — SERVIÇOS
+   ========================================================= */
+
+const services = document.querySelector(".services");
+
+if (services) {
+
+    const servicesObserver = new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                    services.classList.add("services-loaded");
+
+                    servicesObserver.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+    servicesObserver.observe(services);
+}
