@@ -36,9 +36,11 @@ body {
     background-color: var(--header-bg);
     border-bottom: 2px solid var(--header-border);
 
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
+   
 
 
 /* =========================================================
@@ -405,6 +407,260 @@ body {
     .nav-link,
     .nav-cta,
     .menu-toggle span {
+        transition: none;
+    }
+}
+
+
+/* =========================================================
+   BANNER PRINCIPAL — ANALIMAR TECH
+   ========================================================= */
+
+.hero {
+    width: 100%;
+    background: linear-gradient(
+        115deg,
+        #061326 0%,
+        #0a1e38 55%,
+        #102b4d 100%
+    );
+    overflow: hidden;
+}
+
+/* ESTRUTURA PRINCIPAL */
+
+.hero-container {
+    width: 100%;
+    max-width: 1440px;
+
+    /* Preenche a área restante abaixo do cabeçalho */
+    min-height: max(470px, calc(100vh - 106px));
+
+    margin: 0 auto;
+    padding: 45px 55px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: 55px;
+}
+
+/* TEXTOS */
+
+.hero-content {
+    width: 100%;
+    max-width: 590px;
+    min-width: 0;
+}
+
+.hero-content h1 {
+    margin: 0 0 22px;
+
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(30px, 3.1vw, 43px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+}
+
+.hero-content p {
+    margin: 0 0 30px;
+
+    color: #e2eaf5;
+    font-family: "Inter", sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.65;
+}
+
+/* BOTÃO — MESMO ESTILO DO CABEÇALHO */
+
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 150px;
+    min-height: 52px;
+    padding: 0 25px;
+
+    background-color: var(--header-blue);
+    color: #ffffff;
+
+    border: 2px solid var(--header-blue);
+    border-radius: 9px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    flex-shrink: 0;
+    transition: all 0.25s ease;
+}
+
+.hero-cta:hover {
+    background-color: var(--header-gold);
+    border-color: var(--header-gold);
+    color: var(--header-dark);
+}
+
+.hero-cta:focus-visible {
+    outline: 3px solid var(--header-gold);
+    outline-offset: 4px;
+}
+
+/* FOTO */
+
+.hero-image {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 14px;
+}
+
+/* =========================================================
+   TABLETS
+   FOTO PRIMEIRO, TEXTOS DEPOIS
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        min-height: auto;
+        padding: 35px 30px;
+        gap: 30px;
+    }
+
+    .hero-image {
+        order: 1;
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+    }
+
+    .hero-content {
+        order: 2;
+        width: 100%;
+        max-width: 680px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+}
+
+/* =========================================================
+   CELULARES
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero-container {
+        padding: 22px 18px 35px;
+        gap: 25px;
+    }
+
+    .hero-image {
+        order: 1;
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        border-radius: 12px;
+    }
+
+    .hero-content {
+        order: 2;
+        width: 100%;
+        max-width: none;
+    }
+
+    .hero-content h1 {
+        font-size: 29px;
+        line-height: 1.25;
+        margin-bottom: 17px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+
+    /* BOTÃO CENTRALIZADO */
+
+    .hero-cta {
+        display: flex;
+        width: fit-content;
+        min-width: 180px;
+        min-height: 52px;
+        margin: 0 auto;
+        font-size: 16px;
+    }
+}
+
+/* =========================================================
+   CELULARES PEQUENOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .hero-container {
+        padding: 18px 14px 30px;
+        gap: 21px;
+    }
+
+    .hero-content h1 {
+        font-size: 26px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+}
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-cta {
         transition: none;
     }
 }
