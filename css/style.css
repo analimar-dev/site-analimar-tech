@@ -1739,3 +1739,387 @@ body {
         transition: none;
     }
 }
+
+/* =========================================================
+   SEÇÃO PERGUNTAS FREQUENTES — ANALIMAR TECH
+   ========================================================= */
+
+.faq {
+    width: 100%;
+    padding: 70px 5%;
+
+    background: linear-gradient(
+        135deg,
+        #06172d 0%,
+        #0b2948 50%,
+        #06172d 100%
+    );
+
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+}
+
+.faq,
+.faq * {
+    box-sizing: border-box;
+}
+
+/* CONTAINER */
+
+.faq-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* =========================================================
+   01. TÍTULO E DESCRIÇÃO
+   ========================================================= */
+
+.faq-heading {
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.faq-title {
+    margin: 0;
+
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.faq-title::after {
+    content: "";
+    display: block;
+
+    width: 70px;
+    height: 4px;
+    margin: 14px auto 0;
+
+    background-color: #d6a642;
+    border-radius: 3px;
+}
+
+.faq-description {
+    margin: 18px 0 0;
+
+    color: #dce6f2;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   02. LISTA DE PERGUNTAS
+   ========================================================= */
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    width: 100%;
+}
+
+/* ITEM */
+
+.faq-item {
+    width: 100%;
+
+    background-color: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(214, 166, 66, 0.35);
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    transition: background-color 0.25s ease,
+                border-color 0.25s ease;
+}
+
+/* PERGUNTA */
+
+.faq-item summary {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 65px;
+    padding: 18px 55px 18px 22px;
+
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::marker {
+    content: "";
+}
+
+/* SÍMBOLO DE ABRIR */
+
+.faq-item summary::after {
+    content: "+";
+
+    position: absolute;
+    top: 50%;
+    right: 22px;
+
+    transform: translateY(-50%);
+
+    color: #d6a642;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+/* SÍMBOLO DE FECHAR */
+
+.faq-item[open] summary::after {
+    content: "−";
+}
+
+/* INTERAÇÃO */
+
+.faq-item summary:hover {
+    color: #d6a642;
+}
+
+.faq-item[open] {
+    background-color: rgba(255, 255, 255, 0.09);
+    border-color: #d6a642;
+}
+
+/* =========================================================
+   03. RESPOSTAS
+   ========================================================= */
+
+.faq-answer {
+    padding: 0 22px 20px;
+}
+
+.faq-answer p {
+    margin: 0;
+
+    color: #dce6f2;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+/* =========================================================
+   04. CHAMADA FINAL
+   ========================================================= */
+
+.faq-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    margin-top: 48px;
+
+    text-align: center;
+}
+
+.faq-contact h3 {
+    margin: 0 0 10px;
+
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.faq-contact p {
+    margin: 0 0 22px;
+
+    color: #dce6f2;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   05. BOTÃO WHATSAPP
+   ========================================================= */
+
+.faq-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 250px;
+    min-height: 52px;
+
+    padding: 0 25px;
+
+    background-color: var(--header-blue);
+    color: #ffffff;
+
+    border: 2px solid var(--header-blue);
+    border-radius: 9px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    text-align: center;
+    text-decoration: none;
+
+    transition: all 0.25s ease;
+}
+
+.faq-cta:hover {
+    background-color: var(--header-gold);
+    border-color: var(--header-gold);
+    color: var(--header-dark);
+}
+
+.faq-cta:focus-visible,
+.faq-item summary:focus-visible {
+    outline: 3px solid #d6a642;
+    outline-offset: 4px;
+}
+
+/* =========================================================
+   06. TABLETS
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .faq {
+        padding: 55px 5%;
+    }
+
+    .faq-title {
+        font-size: 34px;
+    }
+
+    .faq-heading {
+        margin-bottom: 32px;
+    }
+}
+
+/* =========================================================
+   07. CELULARES
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .faq {
+        padding: 45px 18px;
+    }
+
+    .faq-heading {
+        margin-bottom: 28px;
+    }
+
+    .faq-title {
+        font-size: 29px;
+        line-height: 1.3;
+    }
+
+    .faq-title::after {
+        width: 58px;
+        height: 3px;
+        margin-top: 11px;
+    }
+
+    .faq-description {
+        font-size: 14px;
+    }
+
+    .faq-list {
+        gap: 11px;
+    }
+
+    .faq-item summary {
+        min-height: 60px;
+        padding: 16px 45px 16px 15px;
+        font-size: 14px;
+    }
+
+    .faq-item summary::after {
+        right: 15px;
+        font-size: 25px;
+    }
+
+    .faq-answer {
+        padding: 0 15px 17px;
+    }
+
+    .faq-answer p {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .faq-contact {
+        margin-top: 35px;
+    }
+
+    .faq-contact h3 {
+        font-size: 21px;
+    }
+
+    .faq-contact p {
+        font-size: 14px;
+    }
+
+    .faq-cta {
+        width: 100%;
+        max-width: 320px;
+        min-height: 50px;
+        font-size: 14px;
+    }
+}
+
+/* =========================================================
+   08. CELULARES PEQUENOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .faq {
+        padding: 38px 14px;
+    }
+
+    .faq-title {
+        font-size: 26px;
+    }
+
+    .faq-item summary {
+        font-size: 13px;
+    }
+
+    .faq-answer p {
+        font-size: 13px;
+    }
+
+    .faq-contact h3 {
+        font-size: 19px;
+    }
+
+    .faq-cta {
+        max-width: 100%;
+        padding: 0 12px;
+    }
+}
+
+/* =========================================================
+   09. ACESSIBILIDADE
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .faq-item,
+    .faq-cta {
+        transition: none;
+    }
+}
