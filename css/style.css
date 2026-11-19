@@ -1,20 +1,10 @@
 
 /* =========================================================
-   ANALIMAR TECH
-   CABEÇALHO — RESET, NAVEGAÇÃO E RESPONSIVIDADE
+   CABEÇALHO PROFISSIONAL — ANALIMAR TECH
+   VERSÃO DEFINITIVA
    ========================================================= */
 
-
-/* =========================================================
-   1. FONTE
-   ========================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-
-/* =========================================================
-   2. RESET GLOBAL
-   ========================================================= */
+/* CONFIGURAÇÃO GERAL */
 
 *,
 *::before,
@@ -22,48 +12,57 @@
     box-sizing: border-box;
 }
 
-html,
 body {
-    width: 100%;
     margin: 0;
-    padding: 0;
+}
+
+:root {
+    --header-bg: #eaf1fb;
+    --header-blue: #173b70;
+    --header-dark: #102d56;
+    --header-gold: #d6a642;
+    --header-border: #d4dfef;
 }
 
 
 /* =========================================================
-   3. CABEÇALHO
+   01. CABEÇALHO — LARGURA TOTAL
    ========================================================= */
 
 .header {
     width: 100%;
-    min-height: 92px;
+    min-height: 104px;
 
-    background-color: #f7f9fb;
-    border-bottom: 1px solid #e1e6ea;
+    background-color: var(--header-bg);
+    border-bottom: 2px solid var(--header-border);
 
-    font-family: "Poppins", Arial, sans-serif;
+    position: relative;
+    z-index: 1000;
 }
 
 
 /* =========================================================
-   4. NAVEGAÇÃO
+   02. NAVEGAÇÃO
    ========================================================= */
 
 .nav {
     width: 100%;
-    min-height: 92px;
-
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
+    max-width: none;
+    min-height: 104px;
 
     margin: 0;
-    padding: 0 40px;
+    padding: 0 clamp(24px, 4.5vw, 75px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
 }
 
 
 /* =========================================================
-   5. LOGO
+   03. LOGO
    ========================================================= */
 
 .logo {
@@ -71,19 +70,24 @@ body {
     align-items: center;
     justify-content: flex-start;
 
+    flex-shrink: 0;
     text-decoration: none;
 }
 
 .logo img {
     display: block;
 
-    width: 245px;
-    height: auto;
+    width: auto;
+    height: 76px;
+    max-width: 230px;
+
+    object-fit: contain;
+    object-position: left center;
 }
 
 
 /* =========================================================
-   6. MENU PRINCIPAL
+   04. MENU PRINCIPAL
    ========================================================= */
 
 .nav-menu {
@@ -91,7 +95,7 @@ body {
     align-items: center;
     justify-content: center;
 
-    gap: 32px;
+    gap: clamp(22px, 2.5vw, 40px);
 
     margin: 0;
     padding: 0;
@@ -99,127 +103,76 @@ body {
     list-style: none;
 }
 
-.nav-menu li {
-    margin: 0;
-    padding: 0;
+.nav-item {
+    display: flex;
+    align-items: center;
 }
 
 .nav-link {
-    position: relative;
-
     display: inline-flex;
     align-items: center;
 
-    padding: 8px 0;
+    padding: 12px 0;
 
-    color: #173b56;
+    color: var(--header-dark);
 
-    font-family: "Poppins", Arial, sans-serif;
-    font-size: 19px;
-    font-weight: 600;
-    line-height: 1.4;
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
 
     text-decoration: none;
     white-space: nowrap;
 
-    transition:
-        color 0.25s ease,
-        transform 0.25s ease;
-}
-
-
-/* LINHA ANIMADA DO MENU */
-
-.nav-link::after {
-    content: "";
-
-    position: absolute;
-    left: 0;
-    bottom: 0;
-
-    width: 100%;
-    height: 2px;
-
-    background-color: #185b7d;
-
-    transform: scaleX(0);
-    transform-origin: center;
-
-    transition: transform 0.25s ease;
+    transition: color 0.25s ease;
 }
 
 .nav-link:hover {
-    color: #185b7d;
-}
-
-.nav-link:hover::after {
-    transform: scaleX(1);
+    color: #a87519;
 }
 
 
 /* =========================================================
-   7. BOTÃO FALE COMIGO
+   05. BOTÃO FALE COMIGO
    ========================================================= */
 
 .nav-cta {
-    width: 164px;
-    min-height: 52px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    margin: 0;
-    padding: 0 22px;
+    min-width: 150px;
+    min-height: 52px;
 
-    background-color: #185b7d;
+    padding: 0 25px;
+
+    background-color: var(--header-blue);
     color: #ffffff;
 
-    border: 1px solid #185b7d;
-    border-radius: 24px;
+    border: 2px solid var(--header-blue);
+    border-radius: 9px;
 
-    font-family: "Poppins", Arial, sans-serif;
-    font-size: 17px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
     font-weight: 700;
-    line-height: 1;
 
     text-decoration: none;
     white-space: nowrap;
 
-    box-shadow: 0 4px 12px rgba(23, 59, 86, 0.10);
+    flex-shrink: 0;
 
-    transition:
-        background-color 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+    transition: all 0.25s ease;
 }
 
 .nav-cta:hover {
-    background-color: #173b56;
-    border-color: #37546b;
-
-    transform: translateY(-2px);
-
-    box-shadow: 0 8px 20px rgba(23, 59, 86, 0.20);
+    background-color: var(--header-gold);
+    border-color: var(--header-gold);
+    color: var(--header-dark);
 }
 
 
 /* =========================================================
-   8. ACESSIBILIDADE — FOCO DE TECLADO
-   ========================================================= */
-
-.nav-link:focus-visible,
-.nav-cta:focus-visible,
-.menu-toggle:focus-visible {
-    outline: 3px solid rgba(24, 91, 125, 0.30);
-    outline-offset: 4px;
-}
-
-
-/* =========================================================
-   9. BOTÃO HAMBÚRGUER
-   ESCONDIDO NO DESKTOP
+   06. MENU HAMBÚRGUER
    ========================================================= */
 
 .menu-toggle {
@@ -228,292 +181,37 @@ body {
     width: 46px;
     height: 46px;
 
-    margin: 0;
-    padding: 0;
+    padding: 10px;
+
+    flex-shrink: 0;
+
+    background-color: #ffffff;
+    border: 1px solid var(--header-border);
+    border-radius: 8px;
+
+    cursor: pointer;
 
     align-items: center;
     justify-content: center;
     flex-direction: column;
 
     gap: 5px;
-
-    background: transparent;
-    border: 0;
-
-    cursor: pointer;
 }
 
 .menu-toggle span {
     display: block;
 
-    width: 25px;
-    height: 2px;
+    width: 23px;
+    height: 2.5px;
 
-    background-color: #173b56;
+    background-color: var(--header-blue);
+    border-radius: 3px;
 
-    border-radius: 2px;
-
-    transition:
-        transform 0.25s ease,
-        opacity 0.25s ease,
-        background-color 0.25s ease;
+    transition: all 0.25s ease;
 }
-
-
-/* =========================================================
-   10. TABLET
-   ========================================================= */
-
-@media (max-width: 1100px) {
-
-    .nav {
-        min-height: 88px;
-        padding: 0 20px;
-    }
-
-    .logo img {
-        width: 180px;
-    }
-
-    .nav-menu {
-        gap: 18px;
-    }
-
-    .nav-link {
-        font-size: 15px;
-    }
-
-    .nav-cta {
-        width: 130px;
-        min-height: 48px;
-
-        padding: 0 14px;
-
-        font-size: 15px;
-    }
-}
-
-
-/* =========================================================
-   11. TABLET MENOR
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-    .header {
-        min-height: 82px;
-    }
-
-    .nav {
-        min-height: 82px;
-        padding: 0 24px;
-    }
-
-    .logo img {
-        width: 190px;
-    }
-
-    .nav-menu {
-        gap: 22px;
-    }
-
-    .nav-link {
-        font-size: 16px;
-    }
-
-    .nav-cta {
-        width: 135px;
-        min-height: 46px;
-
-        padding: 0 16px;
-
-        font-size: 15px;
-    }
-}
-
-
-/* =========================================================
-   12. CELULAR
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-    .header {
-        min-height: 76px;
-    }
-
-    .nav {
-        position: relative;
-
-        min-height: 76px;
-        padding: 0 16px;
-
-        display: flex;
-        align-items: center;
-    }
-
-    .logo {
-        flex-shrink: 0;
-    }
-
-    .logo img {
-        width: 165px;
-    }
-
-    /* ESCONDE O MENU PRINCIPAL */
-
-    .nav-menu {
-        display: none;
-    }
-
-    /* BOTÃO FALE COMIGO */
-
-    .nav-cta {
-        width: 126px;
-        min-height: 44px;
-
-        margin-left: auto;
-        padding: 0 14px;
-
-        font-size: 15px;
-    }
-
-    /* MOSTRA O HAMBÚRGUER */
-
-    .menu-toggle {
-        display: flex;
-
-        flex-shrink: 0;
-
-        margin-left: 10px;
-    }
-
-    /* MENU MOBILE ABERTO */
-
-    .nav-menu.menu-aberto {
-        position: absolute;
-        top: 100%;
-        right: 10px;
-
-        display: flex;
-
-        width: 250px;
-
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: flex-start;
-
-        gap: 0;
-
-        margin: 0;
-        padding: 12px 20px;
-
-        background-color: #f7f9fb;
-
-        border: 1px solid #e1e6ea;
-        border-radius: 0 0 12px 12px;
-
-        box-shadow: 0 8px 20px rgba(23, 59, 86, 0.12);
-
-        z-index: 1000;
-    }
-
-    .nav-menu.menu-aberto .nav-item {
-        width: 100%;
-    }
-
-    .nav-menu.menu-aberto .nav-link {
-        display: flex;
-
-        width: 100%;
-
-        padding: 12px 0;
-    }
-}
-
-
-/* =========================================================
-   13. CELULAR PEQUENO
-   ========================================================= */
-
-@media (max-width: 420px) {
-
-    .header {
-        min-height: 72px;
-    }
-
-    .nav {
-        min-height: 72px;
-        padding: 0 10px;
-    }
-
-    .logo img {
-        width: 145px;
-    }
-
-    .nav-cta {
-        width: 112px;
-        min-height: 42px;
-
-        padding: 0 10px;
-
-        font-size: 14px;
-    }
-
-    .menu-toggle {
-        width: 42px;
-        height: 42px;
-
-        margin-left: 7px;
-    }
-
-    .menu-toggle span {
-        width: 23px;
-    }
-}
-
-
-/* =========================================================
-   14. CELULAR MUITO PEQUENO
-   ========================================================= */
-
-@media (max-width: 360px) {
-
-    .nav {
-        padding: 0 8px;
-    }
-
-    .logo img {
-        width: 132px;
-    }
-
-    .nav-cta {
-        width: 104px;
-        min-height: 40px;
-
-        font-size: 13px;
-    }
-
-    .menu-toggle {
-        width: 40px;
-        height: 40px;
-
-        margin-left: 5px;
-    }
-
-    .menu-toggle span {
-        width: 22px;
-    }
-}
-
-
-/* =========================================================
-   15. ANIMAÇÃO DO HAMBÚRGUER → X
-   QUANDO aria-expanded="true"
-   ========================================================= */
 
 .menu-toggle[aria-expanded="true"] span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+    transform: translateY(7.5px) rotate(45deg);
 }
 
 .menu-toggle[aria-expanded="true"] span:nth-child(2) {
@@ -521,5 +219,192 @@ body {
 }
 
 .menu-toggle[aria-expanded="true"] span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   07. ACESSIBILIDADE
+   ========================================================= */
+
+.nav-link:focus-visible,
+.nav-cta:focus-visible,
+.menu-toggle:focus-visible,
+.logo:focus-visible {
+    outline: 3px solid var(--header-gold);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   08. TABLETS E TELAS INTERMEDIÁRIAS
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .nav {
+        padding: 0 24px;
+        gap: 18px;
+    }
+
+    .logo img {
+        height: 65px;
+        max-width: 190px;
+    }
+
+    .nav-menu {
+        gap: 17px;
+    }
+
+    .nav-link {
+        font-size: 15px;
+    }
+
+    .nav-cta {
+        min-width: 130px;
+        min-height: 48px;
+        padding: 0 16px;
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   09. CELULARES E TABLETS PEQUENOS
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .header,
+    .nav {
+        min-height: 84px;
+    }
+
+    .nav {
+        padding: 0 20px;
+        gap: 12px;
+    }
+
+    .logo img {
+        height: 58px;
+        max-width: 180px;
+    }
+
+    /* HAMBÚRGUER VISÍVEL */
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* MENU FECHADO */
+
+    .nav-menu {
+        display: none;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+        padding: 15px 22px 22px;
+
+        background-color: var(--header-bg);
+
+        border-top: 1px solid var(--header-border);
+        border-bottom: 1px solid var(--header-border);
+
+        box-shadow: 0 12px 22px rgba(16, 45, 86, 0.12);
+
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+
+        gap: 0;
+    }
+
+    /* MENU ABERTO */
+
+    .nav-menu.menu-aberto {
+        display: flex;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        display: flex;
+
+        width: 100%;
+        padding: 16px 8px;
+
+        font-size: 17px;
+        font-weight: 700;
+
+        border-bottom: 1px solid var(--header-border);
+    }
+
+    .nav-item:last-child .nav-link {
+        border-bottom: none;
+    }
+
+    .nav-cta {
+        min-width: 125px;
+        min-height: 44px;
+
+        padding: 0 14px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   10. CELULARES PEQUENOS — 320 A 380 PX
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .nav {
+        padding: 0 10px;
+        gap: 7px;
+    }
+
+    .logo img {
+        height: 45px;
+        max-width: 112px;
+    }
+
+    .nav-cta {
+        min-width: auto;
+        min-height: 39px;
+
+        padding: 0 8px;
+
+        font-size: 11px;
+    }
+
+    .menu-toggle {
+        width: 39px;
+        height: 39px;
+        padding: 8px;
+    }
+
+    .menu-toggle span {
+        width: 20px;
+    }
+}
+
+
+/* =========================================================
+   11. REDUÇÃO DE MOVIMENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .nav-link,
+    .nav-cta,
+    .menu-toggle span {
+        transition: none;
+    }
 }
